@@ -8,10 +8,22 @@
 import SwiftUI
 
 @main
-struct HomeSchoolApp: App {
+struct YourApp: App {
+    @State private var showSplash = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if showSplash {
+                SplashScreenView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { // Show splash for 3 seconds
+                            showSplash = false
+                        }
+                    }
+            } else {
+                // Your main ContentView or initial view
+                ContentView()
+            }
         }
     }
 }
