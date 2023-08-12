@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "title": "⭕️ Circle Time",
+        "description": "Lets take attendance and talk about what we're going to do today!",
+        "timeInMinutes": 5
+    },
+    {
+        "id": "2",
+        "title": "📖 Storytime",
+        "description": "Read a story together!",
+        "timeInMinutes": 20
+    },
+    {
+        "id": "3",
+        "title": "🔡 Phonics",
+        "description": "Practice Your Phonics together",
+        "timeInMinutes": 20
+    },
+    {
+        "id": "4",
+        "title": "👷🏼‍♂️ Building Time",
+        "description": "Play with legos and build something cool!",
+        "timeInMinutes": 20
+    },
+    {
+        "id": "5",
+        "title": "➕ Math Games",
+        "description": "Lets practice math - adding and subtracting",
+        "timeInMinutes": 20
+    },
+    {
+        "id": "6",
+        "title": "🎨 Arts and Crafts",
+        "description": "Painting, drawing, sculpting, and all kinds of crafts!",
+        "timeInMinutes": 20
+    },
+]

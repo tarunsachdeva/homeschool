@@ -14,6 +14,10 @@
 		44CE8C3D2A867E4B00FB8B6F /* HomeSchoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE8C3C2A867E4B00FB8B6F /* HomeSchoolTests.swift */; };
 		44CE8C472A867E4B00FB8B6F /* HomeSchoolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE8C462A867E4B00FB8B6F /* HomeSchoolUITests.swift */; };
 		44CE8C492A867E4B00FB8B6F /* HomeSchoolUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE8C482A867E4B00FB8B6F /* HomeSchoolUITestsLaunchTests.swift */; };
+		44CE8C562A86917B00FB8B6F /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE8C552A86917B00FB8B6F /* Activity.swift */; };
+		44CE8C582A8691B200FB8B6F /* activities.json in Resources */ = {isa = PBXBuildFile; fileRef = 44CE8C572A8691B200FB8B6F /* activities.json */; };
+		44CE8C5A2A86920400FB8B6F /* ActivityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE8C592A86920400FB8B6F /* ActivityDetailView.swift */; };
+		44CE8C5C2A86922300FB8B6F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE8C5B2A86922300FB8B6F /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		44CE8C422A867E4B00FB8B6F /* HomeSchoolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeSchoolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44CE8C462A867E4B00FB8B6F /* HomeSchoolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSchoolUITests.swift; sourceTree = "<group>"; };
 		44CE8C482A867E4B00FB8B6F /* HomeSchoolUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSchoolUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		44CE8C552A86917B00FB8B6F /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		44CE8C572A8691B200FB8B6F /* activities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = activities.json; sourceTree = "<group>"; };
+		44CE8C592A86920400FB8B6F /* ActivityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailView.swift; sourceTree = "<group>"; };
+		44CE8C5B2A86922300FB8B6F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,10 @@
 				44CE8C2D2A867E4A00FB8B6F /* ContentView.swift */,
 				44CE8C2F2A867E4B00FB8B6F /* Assets.xcassets */,
 				44CE8C312A867E4B00FB8B6F /* Preview Content */,
+				44CE8C552A86917B00FB8B6F /* Activity.swift */,
+				44CE8C572A8691B200FB8B6F /* activities.json */,
+				44CE8C592A86920400FB8B6F /* ActivityDetailView.swift */,
+				44CE8C5B2A86922300FB8B6F /* SettingsView.swift */,
 			);
 			path = HomeSchool;
 			sourceTree = "<group>";
@@ -231,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44CE8C582A8691B200FB8B6F /* activities.json in Resources */,
 				44CE8C332A867E4B00FB8B6F /* Preview Assets.xcassets in Resources */,
 				44CE8C302A867E4B00FB8B6F /* Assets.xcassets in Resources */,
 			);
@@ -257,7 +270,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44CE8C5C2A86922300FB8B6F /* SettingsView.swift in Sources */,
+				44CE8C562A86917B00FB8B6F /* Activity.swift in Sources */,
 				44CE8C2E2A867E4A00FB8B6F /* ContentView.swift in Sources */,
+				44CE8C5A2A86920400FB8B6F /* ActivityDetailView.swift in Sources */,
 				44CE8C2C2A867E4A00FB8B6F /* HomeSchoolApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,10 +433,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HomeSchool/Preview Content\"";
+				DEVELOPMENT_TEAM = DKGA48NGPB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,10 +459,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HomeSchool/Preview Content\"";
+				DEVELOPMENT_TEAM = DKGA48NGPB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
