@@ -17,11 +17,12 @@ let dateFormatter: DateFormatter = {
 // Date formatter for the time
 let timeFormatter: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.timeStyle = .medium
+    formatter.timeStyle = .short
     return formatter
 }()
 
 struct ContentView: View {
+    @State private var currentDate = Date()
     @State private var allActivities: [Activity] = loadActivities()
     @State private var selectedActivities: [String] = UserDefaults.standard.array(forKey: "selectedActivities") as? [String] ?? [] {
         didSet {
@@ -29,9 +30,15 @@ struct ContentView: View {
         }
     }
     
-    @State private var welcomeMessage: String = UserDefaults.standard.string(forKey: "welcomeMessage") ?? "" {
+    @State private var welcomeMessage: String = UserDefaults.standard.string(forKey: "welcomeMessage") ?? "Welcome!" {
         didSet {
             UserDefaults.standard.set(welcomeMessage, forKey: "welcomeMessage")
+        }
+    }
+
+    func startTimer() {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+            currentDate = Date()
         }
     }
 
@@ -48,16 +55,21 @@ struct ContentView: View {
                     }
                     
                     // Date and Time
-                    Text("Today is \(Date(), formatter: dateFormatter)")
+                    Text("Today is \(currentDate, formatter: dateFormatter)")
                         .font(.title)
 
-                    Text("\(Date(), formatter: timeFormatter)")
+                    Text("\(currentDate, formatter: timeFormatter)")
                         .font(.title)
                         .padding()
 
-                    Text("Your Activities Today:")
-                        .font(.title3)
-                        .padding(.leading)
+
+                    HStack {
+                        Text("Your Activities Today:")
+                            .font(.title3)
+                            .padding(.leading)
+                        Spacer()  // Pushes the Text to the left
+                    }
+
                     
                     // Activities List
                     List(allActivities.filter { selectedActivities.contains($0.id) }) { activity in
@@ -67,7 +79,7 @@ struct ContentView: View {
                     }
 
                     Spacer()
-                }
+                }.onAppear(perform: startTimer)
 
                 VStack {
                     Spacer()
@@ -76,18 +88,20 @@ struct ContentView: View {
                         Spacer()
 
                         NavigationLink(destination: SettingsView(allActivities: allActivities, selectedActivities: $selectedActivities, welcomeMessage: $welcomeMessage)) {
-                            Image(systemName: "gear")
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                                .padding()
-                                .background(Color.accentColor)
-                                .foregroundColor(.white)
-                                .cornerRadius(15)
-                                .padding(.bottom)
-                                .padding(.trailing)
+                              Text("Settings")
+//                            Image(systemName: "gear")
+//                                .resizable()
+//                                .frame(width: 24, height: 24)
+//                                .padding()
+//                                .background(Color.accentColor)
+//                                .foregroundColor(.white)
+//                                .cornerRadius(15)
+//                                .padding(.bottom)
+//                                .padding(.trailing)
                         }
                     }
                 }
+
             }
         }
     }

@@ -13,17 +13,32 @@ struct SettingsView: View {
     @Binding var welcomeMessage: String
 
     var body: some View {
-        List(allActivities) { activity in
-            Toggle("\(activity.title) (\(activity.timeInMinutes) mins)", isOn: isSelected(activity))
-        }
-        
-        Divider()
-
         VStack {
-            Text("Welcome Message")
-            TextField("Enter a welcome message", text: $welcomeMessage)
+            Text("Settings")
+                .font(.title3)
                 .padding()
-                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+            
+            Divider()
+            
+            HStack {
+                Text("Customize Activity List")
+                    .font(.headline)
+                    .padding(.leading)
+                Spacer()  // Pushes the Text to the left
+            }
+
+            List(allActivities) { activity in
+                Toggle("\(activity.title) (\(activity.timeInMinutes) mins)", isOn: isSelected(activity))
+            }
+            
+            HStack {
+                Text("Custom Welcome Message")
+                    .font(.headline)
+                    .padding(.leading)
+                Spacer()  // Pushes the Text to the left
+            }
+
+            TextField("Enter a welcome message", text: $welcomeMessage)
         }
     }
 
